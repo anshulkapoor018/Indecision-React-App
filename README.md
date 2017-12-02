@@ -5,4 +5,4 @@ A basic ReactJS website for making Fun Decisions Randomly
 
 Command 1 ---> yarn run build
 
-Command 2 ---> live-server public
+Command 2 ---> yarn run server
