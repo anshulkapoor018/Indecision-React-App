@@ -12,11 +12,24 @@ class IndecisionApp extends React.Component {
 
     //Example of Component Lifecycle Methods of React
     componentDidMount(){
-        console.log("Fetching Data");
+        try{
+            const json = localStorage.getItem('options');
+            const options = JSON.parse(json);
+
+            if(options){
+                this.setState(() => ({ options }));
+            }
+        } catch (e){
+
+        }
     }
 
-    componentDidUpdate(){
-        console.log("Saving Data");
+    componentDidUpdate(prevProps, prevState){
+        if(prevState.options.length !== this.state.options.length){
+            const json = JSON.stringify(this.state.options);
+            localStorage.setItem('options', json);
+            console.log("Saving Data");            
+        }
     }
 
     componentWillUnmount(){
@@ -108,6 +121,7 @@ const Options = (props) => {
     return (
       <div>
         <button onClick={props.handleDeleteOptions}>Remove All</button>
+        {props.options.length === 0 && <p>Please add an option to get started</p>}
         {
           props.options.map((option) => (
             <Option
@@ -151,6 +165,10 @@ class AddOptions extends React.Component {
         const error = this.props.handleAddOption(option);
 
         this.setState(() => ({error}));
+
+        if(!error){
+            event.target.elements.option.value = '';
+        }
     
     }
     render(){
