@@ -1,0 +1,20 @@
+.header {
+    background: $offBlack;
+    color: white;
+    margin-bottom: 3*$spacing;
+    padding: $spacing 0;
+  }
+  
+  //BEM-Block element Modifier NAMING Convention
+  .header__title {
+    font-size: 3*$spacing;
+    margin: 0;
+  }
+  
+  .header__subtitle {
+    color: $offWhite;
+    font-size: $spacing;
+    font-weight: 500;
+    margin: 0;
+  }
+  
