@@ -6,7 +6,7 @@
     font-weight: bold;
     font-size: 2*$spacing;
     width: 100%;
-    margin-bottom: 3*$spacing;
+    margin-bottom: $spacing;
     padding: 2.4rem;
 }
 
@@ -28,4 +28,10 @@
     border: none;
     color: $offWhite;
     padding: 0;
+}
+
+@media(min-width: $desktop-breakpoint){
+    .big-button{
+        margin-bottom: 3*$spacing;
+    }
 }

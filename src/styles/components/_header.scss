@@ -1,7 +1,7 @@
 .header {
     background: $offBlack;
     color: white;
-    margin-bottom: 3*$spacing;
+    margin-bottom: $spacing;
     padding: $spacing 0;
   }
   
@@ -18,3 +18,9 @@
     margin: 0;
   }
   
+
+  @media(min-width: $desktop-breakpoint) {
+    .header {
+      margin-bottom: 3*$spacing;
+    }
+  }
